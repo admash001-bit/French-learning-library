@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ category_name }} - Levels</title>
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+        h2 { color: #1f2937; margin-top: 0; font-size: 22px; }
+        p { color: #4b5563; font-size: 14px; margin-bottom: 24px; }
+        .level-btn {
+            display: block;
+            background: #f3f4f6;
+            color: #1f2937;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid #d1d5db;
+            transition: all 0.2s;
+        }
+        .level-btn:hover {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .back-link:hover { color: #1f2937; }
+    </style>
+</head>
+<body>
+    <div class="card"
+        <h2>{{ category_name }}</h2>
+        <p>Select your proficiency level:</p>
+        
+        {% if category_name and 'Vocabulary' in category_name %}
+    <!-- Vocabulary PDFs -->
+    <a href="{{ url_for('static', filename='A1 vocabulary.pdf') }}" class="level-btn" target="_blank">A1 - Beginner Vocabulary</a>
+    <a href="{{ url_for('static', filename='A2 vocabulary.pdf') }}" class="level-btn" target="_blank">A2 - Elementary Vocabulary</a>
+    <a href="{{ url_for('static', filename='B1 vocabulary.pdf') }}" class="level-btn" target="_blank">B1 - Intermediate Vocabulary</a>
+    <a href="{{ url_for('static', filename='B2 vocabulary.pdf') }}" class="level-btn" target="_blank">B2 - Upper Intermediate Vocabulary</a>
+    <a href="{{ url_for('static', filename='C1 vocabulary.pdf') }}" class="level-btn" target="_blank">C1 - Advanced Vocabulary</a>
+    <a href="{{ url_for('static', filename='C2 vocabulary.pdf') }}" class="level-btn" target="_blank">C2 - Mastery Vocabulary</a>
+{% elif category_name and 'Verbs' in category_name %}
+    <!-- Verbs PDFs -->
+    <a href="{{ url_for('static', filename='A1 verbs.pdf') }}" class="level-btn" target="_blank">A1 - Beginner Verbs</a>
+    <a href="{{ url_for('static', filename='A2 verbs.pdf') }}" class="level-btn" target="_blank">A2 - Elementary Verbs</a>
+    <a href="{{ url_for('static', filename='B1 verbs.pdf') }}" class="level-btn" target="_blank">B1 - Intermediate Verbs</a>
+    <a href="{{ url_for('static', filename='B2 verbs.pdf') }}" class="level-btn" target="_blank">B2 - Upper Intermediate Verbs</a>
+    <a href="{{ url_for('static', filename='C1 verbs.pdf') }}" class="level-btn" target="_blank">C1 - Advanced Verbs</a>
+    <a href="{{ url_for('static', filename='C2 verbs.pdf') }}" class="level-btn" target="_blank">C2 - Mastery Verbs</a>
+{% elif category_name and 'Conversation' in category_name %}
+    <!-- Conversation Guide PDFs -->
+    <a href="{{ url_for('static', filename='A1 conversation.pdf') }}" class="level-btn" target="_blank">A1 - Beginner Conversation</a>
+    <a href="{{ url_for('static', filename='A2 conversation.pdf') }}" class="level-btn" target="_blank">A2 - Elementary Conversation</a>
+    <a href="{{ url_for('static', filename='B1 conversation.pdf') }}" class="level-btn" target="_blank">B1 - Intermediate Conversation</a>
+    <a href="{{ url_for('static', filename='B2 conversation.pdf') }}" class="level-btn" target="_blank">B2 - Upper Intermediate Conversation</a>
+    <a href="{{ url_for('static', filename='C1 conversation.pdf') }}" class="level-btn" target="_blank">C1 - Advanced Conversation</a>
+    <a href="{{ url_for('static', filename='C2 conversation.pdf') }}" class="level-btn" target="_blank">C2 - Mastery Conversation</a>
+{% else %}
+    <!-- Grammar PDFs -->
+    <a href="{{ url_for('static', filename='A1 grammar.pdf') }}" class="level-btn" target="_blank">A1 - Beginner Grammar</a>
+    <a href="{{ url_for('static', filename='A2 grammar.pdf') }}" class="level-btn" target="_blank">A2 - Elementary Grammar</a>
+    <a href="{{ url_for('static', filename='B1 grammar.pdf') }}" class="level-btn" target="_blank">B1 - Intermediate Grammar</a>
+    <a href="{{ url_for('static', filename='B2 grammar.pdf') }}" class="level-btn" target="_blank">B2 - Upper Intermediate Grammar</a>
+    <a href="{{ url_for('static', filename='C1 grammar.pdf') }}" class="level-btn" target="_blank">C1 - Advanced Grammar</a>
+    <a href="{{ url_for('static', filename='C2 grammar.pdf') }}" class="level-btn" target="_blank">C2 - Mastery Grammar</a>
+{% endif %}
+
+
+        <a href="/library?username={{ username }}" class="back-link">← Back to Library</a>
+    </div>
+</body>
+</html>

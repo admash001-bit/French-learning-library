@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>French Library Login</title>
+    <style>
+        body {
+            /* This sets a background wallpaper image. You can swap the URL for any image link you like! */
+            background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+            .card {
+            background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+            backdrop-filter: blur(12px); /* Creates the frosted glass blur effect */
+            -webkit-backdrop-filter: blur(12px); /* Safari support for blur */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle light border */
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 380px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #1f2937;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        p {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+        .input-group {
+            margin-bottom: 16px;
+            text-align: left;
+        }
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 14px;
+            box-sizing: border-box;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+        input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+        button {
+            width: 100%;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Welcome to French Library</h2>
+        <p>Please enter your details to access the resources</p>
+        
+        <form action="/library" method="GET">
+            <div class="input-group">
+                <input type="text" name="username" placeholder="Your Name" required>
+            </div>
+            <div class="input-group">
+                <input type="number" name="age" placeholder="Your Age" required>
+            </div>
+            <button type="submit">Access Library</button>
+        </form>
+    </div>
+
+</body>
+</html>
