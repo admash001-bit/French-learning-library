@@ -84,41 +84,42 @@
     </style>
 </head>
 <body>
+    {% set cat_lower = (category_name or '') | lower %}
     <div class="card">
         <h2>{{ category_name }}</h2>
         <p>Select your proficiency level:</p>
 
-        {% if 'Vocabulary' in category_name %}
-            <a href="{{ url_for('static', filename='A1 vocabulary.pdf') }}" class="level-btn" target="_blank">A1 - Beginner {{ category_name }}</a>
-            <a href="{{ url_for('static', filename='A2 vocabulary.pdf') }}" class="level-btn" target="_blank">A2 - Elementary {{ category_name }}</a>
-            <a href="{{ url_for('static', filename='B1 vocabulary.pdf') }}" class="level-btn" target="_blank">B1 - Intermediate {{ category_name }}</a>
-            <a href="{{ url_for('static', filename='B2 Vocabulary.pdf') }}" class="level-btn" target="_blank">B2 - Upper Intermediate {{ category_name }}</a>
-            <a href="{{ url_for('static', filename='C1 vocabulary .pdf') }}" class="level-btn" target="_blank">C1 - Advanced {{ category_name }}</a>
-            <a href="{{ url_for('static', filename='C2 vocabulary.pdf') }}" class="level-btn" target="_blank">C2 - Mastery {{ category_name }}</a>
+        {% if 'vocab' in cat_lower %}
+            <a href="{{ url_for('static', filename='A1 vocabulary.pdf') }}" class="level-btn" target="_blank">A1 - Beginner Vocabulary</a>
+            <a href="{{ url_for('static', filename='A2 vocabulary.pdf') }}" class="level-btn" target="_blank">A2 - Elementary Vocabulary</a>
+            <a href="{{ url_for('static', filename='B1 vocabulary.pdf') }}" class="level-btn" target="_blank">B1 - Intermediate Vocabulary</a>
+            <a href="{{ url_for('static', filename='B2 Vocabulary.pdf') }}" class="level-btn" target="_blank">B2 - Upper Intermediate Vocabulary</a>
+            <a href="{{ url_for('static', filename='C1 vocabulary .pdf') }}" class="level-btn" target="_blank">C1 - Advanced Vocabulary</a>
+            <a href="{{ url_for('static', filename='C2 vocabulary.pdf') }}" class="level-btn" target="_blank">C2 - Mastery Vocabulary</a>
 
-        {% elif 'Verbs' in category_name %}
-            <a href="{{ url_for('static', filename='A1 verbs.pdf') }}" class="level-btn" target="_blank">A1 - Beginner {{ category_name }}</a>
-            <a href="{{ url_for('static', filename='A2 verbs.pdf') }}" class="level-btn" target="_blank">A2 - Elementary {{ category_name }}</a>
-            <a href="{{ url_for('static', filename='B1 verbs.pdf') }}" class="level-btn" target="_blank">B1 - Intermediate {{ category_name }}</a>
-            <a href="{{ url_for('static', filename='B2 verbs.pdf') }}" class="level-btn" target="_blank">B2 - Upper Intermediate {{ category_name }}</a>
-            <a href="{{ url_for('static', filename='C1 verbs.pdf') }}" class="level-btn" target="_blank">C1 - Advanced {{ category_name }}</a>
-            <a href="{{ url_for('static', filename='C2 verbs.pdf') }}" class="level-btn" target="_blank">C2 - Mastery {{ category_name }}</a>
+        {% elif 'verb' in cat_lower %}
+            <a href="{{ url_for('static', filename='A1 verbs.pdf') }}" class="level-btn" target="_blank">A1 - Beginner Verbs</a>
+            <a href="{{ url_for('static', filename='A2 verbs.pdf') }}" class="level-btn" target="_blank">A2 - Elementary Verbs</a>
+            <a href="{{ url_for('static', filename='B1 verbs.pdf') }}" class="level-btn" target="_blank">B1 - Intermediate Verbs</a>
+            <a href="{{ url_for('static', filename='B2 verbs.pdf') }}" class="level-btn" target="_blank">B2 - Upper Intermediate Verbs</a>
+            <a href="{{ url_for('static', filename='C1 verbs.pdf') }}" class="level-btn" target="_blank">C1 - Advanced Verbs</a>
+            <a href="{{ url_for('static', filename='C2 verbs.pdf') }}" class="level-btn" target="_blank">C2 - Mastery Verbs</a>
 
-        {% elif 'Conversation' in category_name %}
-            <a href="{{ url_for('static', filename='A1 conversation.pdf') }}" class="level-btn" target="_blank">A1 - Beginner {{ category_name }}</a>
-            <a href="{{ url_for('static', filename='A2 conversation.pdf') }}" class="level-btn" target="_blank">A2 - Elementary {{ category_name }}</a>
-            <a href="{{ url_for('static', filename='B1 conversation.pdf') }}" class="level-btn" target="_blank">B1 - Intermediate {{ category_name }}</a>
-            <a href="{{ url_for('static', filename='B2 conversation.pdf') }}" class="level-btn" target="_blank">B2 - Upper Intermediate {{ category_name }}</a>
-            <a href="{{ url_for('static', filename='C1 conversation.pdf') }}" class="level-btn" target="_blank">C1 - Advanced {{ category_name }}</a>
-            <a href="{{ url_for('static', filename='C2 conversation.pdf') }}" class="level-btn" target="_blank">C2 - Mastery {{ category_name }}</a>
+        {% elif 'convers' in cat_lower %}
+            <a href="{{ url_for('static', filename='A1 conversation.pdf') }}" class="level-btn" target="_blank">A1 - Beginner Conversation</a>
+            <a href="{{ url_for('static', filename='A2 conversation.pdf') }}" class="level-btn" target="_blank">A2 - Elementary Conversation</a>
+            <a href="{{ url_for('static', filename='B1 conversation.pdf') }}" class="level-btn" target="_blank">B1 - Intermediate Conversation</a>
+            <a href="{{ url_for('static', filename='B2 conversation.pdf') }}" class="level-btn" target="_blank">B2 - Upper Intermediate Conversation</a>
+            <a href="{{ url_for('static', filename='C1 conversation.pdf') }}" class="level-btn" target="_blank">C1 - Advanced Conversation</a>
+            <a href="{{ url_for('static', filename='C2 conversation.pdf') }}" class="level-btn" target="_blank">C2 - Mastery Conversation</a>
 
         {% else %}
-            <a href="{{ url_for('static', filename='A1 grammar.pdf') }}" class="level-btn" target="_blank">A1 - Beginner {{ category_name }}</a>
-            <a href="{{ url_for('static', filename='A2 grammar.pdf') }}" class="level-btn" target="_blank">A2 - Elementary {{ category_name }}</a>
-            <a href="{{ url_for('static', filename='B1 grammar.pdf') }}" class="level-btn" target="_blank">B1 - Intermediate {{ category_name }}</a>
-            <a href="{{ url_for('static', filename='B2 grammar.pdf') }}" class="level-btn" target="_blank">B2 - Upper Intermediate {{ category_name }}</a>
-            <a href="{{ url_for('static', filename='C1 grammar.pdf') }}" class="level-btn" target="_blank">C1 - Advanced {{ category_name }}</a>
-            <a href="{{ url_for('static', filename='C2 grammar.pdf') }}" class="level-btn" target="_blank">C2 - Mastery {{ category_name }}</a>
+            <a href="{{ url_for('static', filename='A1 grammar.pdf') }}" class="level-btn" target="_blank">A1 - Beginner Grammar</a>
+            <a href="{{ url_for('static', filename='A2 grammar.pdf') }}" class="level-btn" target="_blank">A2 - Elementary Grammar</a>
+            <a href="{{ url_for('static', filename='B1 grammar.pdf') }}" class="level-btn" target="_blank">B1 - Intermediate Grammar</a>
+            <a href="{{ url_for('static', filename='B2 grammar.pdf') }}" class="level-btn" target="_blank">B2 - Upper Intermediate Grammar</a>
+            <a href="{{ url_for('static', filename='C1 grammar.pdf') }}" class="level-btn" target="_blank">C1 - Advanced Grammar</a>
+            <a href="{{ url_for('static', filename='C2 grammar.pdf') }}" class="level-btn" target="_blank">C2 - Mastery Grammar</a>
         {% endif %}
 
         <a href="/library?username={{ username }}" class="back-link">&larr; Back to Library</a>
