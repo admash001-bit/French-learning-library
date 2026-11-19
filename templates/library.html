@@ -2,79 +2,164 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Library - French Learning Library</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library - HAILE FRENCH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1920&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            min-height: 100vh;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: #4d4482;
+            color: #ffffff;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+            flex-direction: column;
         }
-        .card {
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            width: 100%;
-            max-width: 480px;
-            text-align: center;
-        }
-        h2 { color: #1f2937; margin-top: 0; }
-        p { color: #4b5563; font-size: 14px; margin-bottom: 24px; }
-        .resource-btn {
-            display: block;
-            background: #f3f4f6;
-            color: #1f2937;
-            padding: 12px 16px;
-            margin-bottom: 12px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            border: 1px solid #d1d5db;
-            transition: all 0.2s;
-        }
-        .resource-btn:hover {
-            background: #3b82f6;
-            color: white;
-            border-color: #3b82f6;
-        }
-        .footer-links {
-            margin-top: 20px;
+
+        header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 14px;
+            padding: 18px 36px;
+            background-color: #3f376e;
         }
-        .footer-links a {
-            color: #6b7280;
+
+        .logo {
+            color: #ffffff;
             text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
         }
-        .footer-links a:hover { color: #1f2937; }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #e6e3f5;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #9be8f0;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 36px 16px;
+        }
+
+        .card {
+            background-color: #f7f6f2;
+            color: #2c2842;
+            width: 100%;
+            max-width: 520px;
+            border-radius: 20px;
+            padding: 36px 28px;
+            text-align: center;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        h2 {
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: #4d4482;
+            margin-bottom: 8px;
+        }
+
+        .card > p {
+            color: #67627d;
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        .resource-btn {
+            display: block;
+            width: 100%;
+            padding: 14px 18px;
+            margin-bottom: 12px;
+            background-color: #ffffff;
+            color: #2c2842;
+            border: 1px solid #dcd9e8;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 0.96rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .resource-btn:hover {
+            background-color: #4d4482;
+            color: #9be8f0;
+            border-color: #4d4482;
+            transform: translateY(-2px);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 18px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a {
+            color: #4d4482;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .credit {
+            margin-top: 8px;
+            font-size: 0.78rem;
+            color: #7c7794;
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h2>Bienvenue, {{ username }}! 😃</h2>
-        <p>You now have access to the French Learning Library. Choose a resource below to start learning:</p>
-        
-        <a href="/levels/French Grammar Basics?username={{ username }}" class="resource-btn">📊 French Grammar Basics</a>
-        <a href="/levels/Beginner Vocabulary Builder?username={{ username }}" class="resource-btn">📚 Beginner Vocabulary Builder</a>
-        <a href="/levels/Common French Verbs Guide?username={{ username }}" class="resource-btn">⚡ Common French Verbs Guide</a>
-        <a href="/levels/Everyday French Conversation?username={{ username }}" class="resource-btn">💬 Everyday French Conversation</a>
-        
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
-        <a href="{{ url_for('home') }}" style="color: black; font-style: italic;">&larr; Back to Registration</a>
-        <div style="text-align: right;">
-            <a href="{{ url_for('feedback_page') }}?username={{ username }}">🫰Feedback</a>
-            <p style="color: rgb(24, 103, 39); font-size: 11px; margin: 4px 0 0 0;">Produced by Haile G</p>
+    <header>
+        <a href="/" class="logo">HAILE FRENCH</a>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/service">Service</a>
+            <a href="/library">Library</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Bienvenue, {{ username if username else 'Guest' }}!</h2>
+            <p>You now have access to the HAILE FRENCH Library. Choose a resource below to start learning:</p>
+
+            <a href="/levels/Grammar" class="resource-btn">French Grammar Basics</a>
+            <a href="/levels/Vocabulary" class="resource-btn">Beginner Vocabulary Builder</a>
+            <a href="/levels/Verbs" class="resource-btn">Common French Verbs Guide</a>
+            <a href="/levels/Conversation" class="resource-btn">Everyday French Conversation</a>
+
+            <div class="footer-links">
+                <a href="/">&larr; Back to Home</a>
+                <a href="/feedback">Feedback</a>
+            </div>
+            <div class="credit">Produced by Haile G</div>
         </div>
     </div>
 </body>
 </html>
-
