@@ -23,6 +23,18 @@ with app.app_context():
 def home():
     return render_template('index.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/service')
+def service():
+    return render_template('service.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
 @app.route('/library')
 def library():
     username = request.args.get('username', 'Guest')
@@ -44,19 +56,19 @@ def submit_feedback():
     db.session.add(new_feedback)
     db.session.commit()
     
-    # Redirect to the thank you page instead of the library
-    return redirect(url_for('library' ,username=name))
+    # Redirect to the library with the user's name
+    return redirect(url_for('library', username=name))
 
-# NEW: Thank you route
+# Thank you route
 @app.route('/thank-you')
 def thank_you_page():
     return render_template('thank_you.html')
+
 # Route for category levels (A1 - C2)
 @app.route('/levels/<category_name>')
 def show_levels(category_name):
     username = request.args.get('username', 'Guest')
     return render_template('levels.html', category_name=category_name, username=username)
+
 if __name__ == '__main__':
     app.run(debug=True)
-
-
